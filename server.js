@@ -1,24 +1,19 @@
-require("dotenv").config({ path: "./config/.env" });
+
 
 const express = require("express");
-const connectDB = require("./config/connectDB");
+const ConnectDb = require("./config/connectDb");
 const app = express();
-
+require('dotenv').config()
 // Data base connection
-connectDB();
-
+ConnectDb();
 // Parse data
 app.use(express.json());
 
 // Routes
-app.use("/app", require("./routes/userRoutes.js"));
+//app.use("/app", require("./routes/userRoutes.js"));
 
 
 
-const PORT = process.env.PORT;
 
-app.listen(PORT, (err) => {
-    err
-      ? console.log("server connection failed")
-      : console.log(`server connected successfully on PORT ${PORT}`);
-  });
+
+app.listen(process.env.PORT, ()=>console.log('server running'));
