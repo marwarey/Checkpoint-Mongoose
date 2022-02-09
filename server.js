@@ -10,7 +10,7 @@ ConnectDb();
 app.use(express.json());
 
 // Routes
-//app.use("/app", require("./routes/userRoutes.js"));
+app.use("/app", require("./routes/contactRoutes.js"));
 
 
 
