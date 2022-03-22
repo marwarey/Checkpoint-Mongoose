@@ -6,7 +6,7 @@ const contactSchema = require('../models/contact');
 
 //method post
 exports.Addcontact = async(req,res)=>{
-    const {name, age, email} = req.body,
+    const {name, age, email} = req.body
     try {
         const contact = new contactSchema(req.body);
         const found = await contactSchema.findOne({email});

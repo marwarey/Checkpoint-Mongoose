@@ -1,6 +1,5 @@
-
-
 const express = require("express");
+
 const ConnectDb = require("./config/connectDb");
 const app = express();
 require('dotenv').config()
@@ -10,7 +9,7 @@ ConnectDb();
 app.use(express.json());
 
 // Routes
-app.use("/app", require("./routes/contactRoutes.js"));
+app.use("/app", require("./routes/contact.js"));
 
 
 
